@@ -1,25 +1,25 @@
+
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/movieSlice";
+import { addNowPlayingMovies, addPopularMovies } from "../utils/movieSlice";
 import { API_OPTIONS } from "../utils/constants";
 import { movieList } from "../utils/data";
-
-
-const useNowPlayingMovies = ()=>{
+const usePopularMovies = ()=>{
     const dispatch = useDispatch();
 
-    const getNowPlayingMovie = async () => {
+    const getPopularMovie = async () => {
       const data = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+       "https://api.themoviedb.org/3/movie/popular?page=1",
         API_OPTIONS
       );
       const json = await data.json();
       if(json.results){
-        dispatch(addNowPlayingMovies(json.results))
+        dispatch(addPopularMovies(json.results))
       }
      
       else{
-        dispatch(addNowPlayingMovies(movieList.results))
+        dispatch(addPopularMovies(movieList.results))
 
       }
       console.log("json", json.results);
@@ -27,8 +27,8 @@ const useNowPlayingMovies = ()=>{
     };
   
     useEffect(() => {
-      getNowPlayingMovie();
+        getPopularMovie();
     }, [])
 }
 
-export default useNowPlayingMovies
+export default usePopularMovies
