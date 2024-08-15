@@ -9,7 +9,7 @@ export const API_OPTIONS = {
     headers: {
       accept: "application/json",
       Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTRlN2YwMzM2Y2VhZGE1ODIwYjFiYjlkNTdlZmEzZSIsIm5iZiI6MTcyMzIxMjEzOC41ODU3MjYsInN1YiI6IjY2YjI2ZTg0MGY4NDcyYTY2NThjMTYzMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-az-N0gKz0fuHCPAcM6m3CU3-9P_IEgkO6j33zWi1lM",
+      "Bearer " + process.env.REACT_APP_TMDB_KEY,
   
     },
   };
@@ -23,3 +23,5 @@ export const API_OPTIONS = {
 
   
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+export const GEMINI_API_KEY=process.env.REACT_APP_GEMINI_API_KEY;
+
