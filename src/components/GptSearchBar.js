@@ -41,7 +41,7 @@ const GptSearchBar = () => {
       searchText.current.value +
       ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
     const result = await model.generateContent(query);
-    //console.log(result?.response?.candidates[0]?.content?.parts[0]?.text)
+   
     if(!result.response){
 
     }
@@ -50,7 +50,7 @@ const GptSearchBar = () => {
 
   const tmdbResult = await Promise.all(promiseArray)
   dispatch(addGptMoviesResult({ movieNames: gptMoviesList, movieResults: tmdbResult }))
-  console.log(tmdbResult)
+
   };
   return (
     <div className="pt-[10%] flex justify-center">

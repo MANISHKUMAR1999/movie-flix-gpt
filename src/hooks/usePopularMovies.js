@@ -22,7 +22,7 @@ const usePopularMovies = ()=>{
         dispatch(addPopularMovies(movieList.results))
 
       }
-      console.log("json", json.results);
+  
     
     };
   

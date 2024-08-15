@@ -22,7 +22,7 @@ const useNowPlayingMovies = ()=>{
         dispatch(addNowPlayingMovies(movieList.results))
 
       }
-      console.log("json", json.results);
+    
     
     };
   

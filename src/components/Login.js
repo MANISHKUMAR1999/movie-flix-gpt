@@ -43,7 +43,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(name.current.value,"display name")
+        
 
           updateProfile(user, {
             displayName: name.current.value,
@@ -51,7 +51,7 @@ const Login = () => {
             .then(() => {
               // Profile updated!
               const {uid,email,displayName} = auth.currentUser;
-              //console.log(photoURL)
+            
               dispatch(addUser({uid:uid,email:email,displayName:displayName}));
              
               // ...
@@ -62,7 +62,7 @@ const Login = () => {
               // ...
             });
 
-          console.log(user, "user object");
+        
         
           // ...
         })
@@ -81,7 +81,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+         
          
           // ...
         })
