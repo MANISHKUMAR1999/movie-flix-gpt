@@ -4,8 +4,10 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 import MainContainer from './MainContainer'
 import SecondaryContainer from './SecondaryContainer'
 import usePopularMovies from '../hooks/usePopularMovies'
+import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import GptSearch from './GptSearch'
 import { useSelector } from 'react-redux'
+import useUpcomingMovies from '../hooks/useUpcomingMovies'
 
 const Browse = () => {
 
@@ -13,6 +15,8 @@ const Browse = () => {
 
    useNowPlayingMovies()
    usePopularMovies()
+   useTopRatedMovies()
+   useUpcomingMovies()
 
   return (
     <div>
