@@ -30,7 +30,7 @@ const GptSearchBar = () => {
   const handleGptSearchClick = async () => {
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-pro",
+      model: "gemini-1.5-flash",
       body: JSON.stringify({
         safety_settings: safetySettings
       }),
@@ -40,7 +40,7 @@ const GptSearchBar = () => {
        "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
       ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
-    const result = await model.generateContent(query);
+    const result = await model.generateContent([query]);
    
     if(!result.response){
 
